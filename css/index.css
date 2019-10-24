@@ -130,43 +130,217 @@ table {
 * {
   box-sizing: border-box;
 }
+/* Variables */
+/* Mixins */
+/* Resume */
 html,
 body {
   height: 100%;
 }
-/* Resume */
+html {
+  font-size: 62.5%;
+}
 .container {
   width: 900px;
   margin: auto;
-  border: solid 2px red;
 }
-.container nav {
+@media (max-width: 500px) {
+  .container {
+    width: 100%;
+  }
+}
+.container header nav {
   text-align: right;
-  font-size: 18px;
-  margin: 10px 10px;
+  font-size: 1.8rem;
+  margin: 2% 1%;
 }
-.container nav a {
-  padding: 10px 10px;
+@media (max-width: 500px) {
+  .container header nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+.container header nav a {
+  padding: 2% 2%;
   text-decoration: none;
   font-weight: bold;
-  color: black;
+  color: darkcyan;
 }
 .container .content {
-  background-color: #a1b4b4;
   max-width: 95%;
   margin: auto;
 }
-.container .content #intro {
+.container .content #home {
   display: flex;
   justify-content: space-between;
+  background-color: #a1b4b4;
+  padding: 3%;
+}
+@media (max-width: 500px) {
+  .container .content #home {
+    flex-direction: column;
+    width: 100%;
+  }
 }
 .container .content .left-side img {
   max-width: 153px;
+  border-radius: 50%;
+  border: 5px slategray dotted;
 }
 .container .content .left-side h1 {
-  font-size: 23px;
+  font-size: 2.3rem;
 }
-.container .content .right-side p {
-  padding: 45px 10px;
-  font-size: 23px;
+.container .content .right-side p:first-child {
+  padding: 1% 0%;
+  font-size: 8.5rem;
+  color: darkcyan;
+  font-style: oblique;
+}
+.container .content .right-side p:last-child {
+  padding: 0% 5%;
+  font-size: 3.5rem;
+  text-align: center;
+  color: darkcyan;
+}
+.container .content #intro-section {
+  margin-top: 3%;
+}
+.container .content #intro-section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: white;
+  margin-bottom: 3%;
+}
+.container .content #intro-section .abt-text p {
+  font-size: 2.5rem;
+  padding: 1% 1%;
+  text-align: justify;
+  line-height: 1.5;
+  background-color: #E9ECEF;
+  border: solid 1.5px #a1b4b4;
+}
+.container .content #skill-section {
+  margin-top: 3%;
+}
+.container .content #skill-section h2 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+.container .content #skill-section .skill-content div {
+  display: table;
+  width: 100%;
+  background-color: #E9ECEF;
+}
+.container .content #skill-section .skill-content div span {
+  padding: 3.5% 2%;
+  font-size: 2.5rem;
+  display: table-cell;
+  vertical-align: middle;
+  border: solid 1.5px #a1b4b4;
+}
+.container .content #skill-section .skill-content div span:first-child {
+  width: 40%;
+  font-style: italic;
+  font-weight: bold;
+}
+.container .content #skill-section .skill-content div span:last-child {
+  font-size: 2rem;
+  width: 60%;
+}
+.container .content #history-section {
+  margin-top: 3%;
+  width: 100%;
+}
+.container .content #history-section h3 {
+  padding-bottom: 1%;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+.container .content #history-section .history-content .title-row {
+  display: flex;
+  padding: 2%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-style: italic;
+  border-top: solid 1.5px #a1b4b4;
+}
+.container .content #history-section .history-content .row1,
+.container .content #history-section .history-content .row2,
+.container .content #history-section .history-content .row3 {
+  display: flex;
+  font-size: 2rem;
+  padding: 2%;
+  border-top: solid 1.5px #a1b4b4;
+}
+.container .content #history-section .history-content .row2 {
+  background-color: #E9ECEF;
+}
+.container .content #history-section .history-content .col-one {
+  width: 15%;
+}
+.container .content #history-section .history-content .col-two {
+  width: 30%;
+}
+.container .content #history-section .history-content .col-three {
+  width: 30%;
+}
+.container .content #history-section .history-content .col-four {
+  width: 25%;
+}
+.container .content #contact-section {
+  margin-top: 3%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #E9ECEF;
+  padding: 20px;
+}
+.container .content #contact-section h4 {
+  padding-bottom: 1%;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 3%;
+}
+.container .content #contact-section .contact-content {
+  display: flex;
+}
+.container .content #contact-section .contact-content .static-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 2rem;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 2;
+  border-top: solid 1.5px #a1b4b4;
+  width: 50%;
+}
+.container .content #contact-section .contact-content .info-form {
+  font-size: 2rem;
+  padding: 2%;
+  border-top: solid 1.5px #a1b4b4;
+  width: 50%;
+  line-height: 2;
+  /* Style the submit button */
+}
+.container .content #contact-section .contact-content .info-form input[type=text],
+.container .content #contact-section .contact-content .info-form select,
+.container .content #contact-section .contact-content .info-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.container .content #contact-section .contact-content .info-form input[type=button] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
 }
